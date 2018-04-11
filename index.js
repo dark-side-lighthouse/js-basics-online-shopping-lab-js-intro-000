@@ -26,8 +26,9 @@ function viewCart() {
   if (cart.length == 0) return "Your shopping cart is empty.";
   var sent = "In your cart, you have ";
   for (var i=0; i < cart.length; i++){
-      var helpObj = cart[i];
-      sent = sent + '${helpObj.itemName} at $${helpObj.itemPrice}';
+      var helpItem = cart[i].itemName;
+      var helpPrice = cart[i].itemPrice;
+      sent = sent + '${helpItem} at $${helpPrice}';
       if (i===cart.length) return sent = sent + '.';
       else if (i===cart.length - 1 ) sent = sent +' and ';
       else sent = sent + ', '
