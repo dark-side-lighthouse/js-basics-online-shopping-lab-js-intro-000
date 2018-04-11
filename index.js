@@ -27,7 +27,7 @@ function viewCart() {
   var sent = "In your cart, you have ";
   for (var i=0; i < cart.length; i++){
       var helpObj = cart[i];
-      sent = sent + helpObj.itemName + "at $" + helpObj.itemPrice;
+      sent = sent + '${helpObj.itemName} at $${helpObj.itemPrice}';
       if (i===cart.length) return sent = sent + '.';
       else if (i===cart.length - 1 ) sent = sent +' and ';
       else sent = sent + ', '
