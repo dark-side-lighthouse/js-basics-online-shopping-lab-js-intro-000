@@ -30,7 +30,7 @@ function viewCart() {
       var helpPrice = cart[i].itemPrice;
       sent = sent + helpItem + " at $" + helpPrice;
       if (i===cart.length - 1) return sent = sent + ".";
-      else if (i===cart.length - 2 ) sent = sent + " and ";
+      else if (i===cart.length - 2 ) sent = sent + ", and ";
       else sent = sent + ", "
   }
   return sent;
