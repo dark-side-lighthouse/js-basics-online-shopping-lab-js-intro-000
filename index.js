@@ -24,13 +24,13 @@ return `${item} has been added to your cart.`;
 function viewCart() {
   // write your code here
   if (cart.length == 0) return "Your shopping cart is empty.";
-  var helpCart = cart.map(function(val){
-    return `${this.itemName} at $${this.itemPrice}`
-  });
-  if (helpCart.length == 1) return `In your cart, you have ${helpCart[0]}.`;
-  else {
-    helpCart[helpCart.length -1] = ` and ${helpCart[helpCart.length -1]}.`;
-    return `In your cart, you have ${helpCart.join()}.`;
+  var sent = "In your cart, you have ";
+  for (var i=0; i < cart.length; i++){
+      var helpObj = cart[i];
+      sent = sent + '${helpObj.itemName} at $${helpObj.itemPrice}'
+      if (i==cart.length) return sent = sent + '.';
+      else if (i==cart.length - 1 ) sent = sent +' and ';
+      else sent = sent + ', '
   }
 }
 
