@@ -28,10 +28,10 @@ function viewCart() {
   for (var i=0; i < cart.length; i++){
       var helpItem = cart[i].itemName;
       var helpPrice = cart[i].itemPrice;
-      sent = sent + '${helpItem} at $${helpPrice}';
-      if (i===cart.length) return sent = sent + '.';
-      else if (i===cart.length - 1 ) sent = sent +' and ';
-      else sent = sent + ', '
+      sent = sent + helpItem + "at $" + helpPrice;
+      if (i===cart.length) return sent = sent + ".";
+      else if (i===cart.length - 1 ) sent = sent + " and ";
+      else sent = sent + ", "
   }
   return sent;
 }
